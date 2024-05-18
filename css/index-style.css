@@ -119,11 +119,11 @@ nav {
 }
 
 .gift-wrapper:hover {
-    /* background-color: white; */
+    background-color: rgb(167, 109, 109);
 }
 
 .gift-wrapper:hover .gift-wrapper img {
-    filter: hue-rotate(-2.4deg) saturate(174.47%) brightness(53.92%);
+    /* -webkit-filter: hue-rotate(-2.4deg) saturate(174.47%) brightness(53.92%); */
 }
 
 .cart-wrapper {

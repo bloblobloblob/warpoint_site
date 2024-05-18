@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index-style.css">
+    <link rel="stylesheet" href="css/products-style.css">
+    <title>Warpoint</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">
+                <img class="logo" src="img/warpoint_logo.svg" alt="warpoint">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Каталог товаров</a></li>
+                <li><a href="#">Мероприятия</a></li>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Информация</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul class="nav-buttons">
+                <li class="phone-wrapper"><a class="phone" href="tel: +7 (343) 289-57-00">+7 (343) 289-57-00</a></li>
+                <li class="gift-wrapper square-button"><a href="#"><img src="img/featured_seasonal_and_gifts.svg" alt=""></a></li>
+                <li class="cart-wrapper square-button"><a href="#"><img src="img/shopping_cart.svg" alt=""></a></li>
+                <li class="login-wrapper square-button"><a href="#"><img src="img/login.svg" alt=""></a></li>
+                <li class="dropdown-menu square-button"><a href="#"><div></div></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="back-button">
+            <button onClick="javascript:history.go(-1);">← Закрыть</button>
+        </div>
+        <section class="product-about">
+            <img src="img/card-placeholder.jpg" alt="">
+            <div class="product-text-wrapper">
+                <h2 class="product-title">Автономные очки виртуальной реальности VR PRO</h2>
+                <p>
+                    Автономные очки виртуальной реальности VR PRO это самодостаточное устройство, не требующее ни ПК ни смартфона, в очках уже встроено все необходимое. VR PRO проще говоря очки со встроенным в них смартфоном. VR PRO имеет встроенный FullHD экран диагональю 5.5 дюймов, процессор, видеоускоритель, оперативную память, 16гб встроенной памяти, встроенный аккумулятор заряда которого хватит на 4-6 часов использования. VR PRO лучше всего подходят для просмотра обычных и 3D фильмов, которые можно закинуть на SD карту и вставить в очки. В VR PRO помимо встроенного магазина приложений, так же есть Play Маркет, где вы можете скачать любые игры и приложения. Причем обычные приложения и игры для Android не заточенные под VR очки, будут автоматически конвертироваться для просмотра в VR очках. Таким образом ваши обычные игры и приложения предстанут перед вами на большом экране.
+                </p>
+                <p class="product-price">
+                    Цена:    13 500 руб.
+                    <a href=""><img src="img/add.svg" alt=""></a>
+                </p>
+            </div>
+        </section>
+        <section class="product-reviews">
+                <h2>Оценки и отзывы</h2>
+                <div class="reviews-data">
+                    {% for r in rev %}
+                    <div class="review">
+                        <p id="author">{{ r.author }}</p>
+                        <p id="review">{{ r.review }}</p>
+                        <p id="date">{{ r.date }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="arrow-container" id="prev-btn"><img src="{% static 'flairest_campus/image/left.svg' %}" style="position: absolute;" alt="Previous"></div>
+                <div class="reviews-container">
+                    <div class="reviews-list">
+                    </div>
+                </div>
+                <div class="arrow-container" id="next-btn"><img src="{% static 'flairest_campus/image/right.svg' %}" alt="Next"></div>
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ revForm.as_p }}
+                    <button type="submit">Отправить отзыв</button>
+                </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-column-1">
+            <img class="logo" src="img/warpoint_logo.svg" alt="">
+            <p>ИП Скоробогатов Владимир Владимирович</p>
+            <p>ИНН: 720509659197</p>
+            <p>ОГРНИП: 321665800029893</p>
+            <div class="mobile-links">
+                <a href="#"><img src="img/appstore.png" alt=""></a>
+                <a href="#"><img src="img/playmarket.png" alt=""></a>
+            </div>
+            <p class="copyright">© 2020-2023. WARPOINT. Все права защищены.
+                Копирование материалов сайта запрещено</p>
+        </div>
+        <div class="footer-column-2">
+            <h4>Информация</h4>
+            <ul>
+                <li><a href="#">Наши акции</a></li>
+                <li><a href="#">Витрина</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Клубная карта</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Лидерборд</a></li>
+            </ul>
+        </div>
+        <div class="footer-column-3">
+            <h4>Соглашения</h4>
+            <ul>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Политика использования Cookie</a></li>
+                <li><a href="#">Пользовательское соглашение</a></li>
+                <li><a href="#">Использование сертификатов</a></li>
+                <li><a href="#">Наши реквизиты</a></li>
+                <li><a href="#">Популярные вопросы</a></li>
+            </ul>
+        </div>
+        <div class="footer-column-4">
+            <h4>Сотрудничество</h4>
+            <ul>
+                <li><a href="#">Франшиза</a></li>
+                <li><a href="#">Арендодателям</a></li>
+                <li><a href="#">Вакансии</a></li>
+                <li><a href="#">Инвестиции</a></li>
+                <li><a href="#">Аренда оборудования</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
