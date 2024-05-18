@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index-style.css' %}">
+    <title>Warpoint</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">
+                <img class="logo" src="{% static 'img/warpoint_logo.svg' %}" alt="warpoint">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Каталог товаров</a></li>
+                <li><a href="#">Мероприятия</a></li>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Информация</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a>--</a></li>
+                <li><a href="{% url 'signup' %}">Регистрация</a></li> 
+                <li><a href="{% url 'login' %}">Вход</a></li>
+                <li>  
+                    <a class="dropdown-item dd-item-color" href="{% url 'user_profile' username=user.username %}">Профиль</a>  
+                </li>
+                <li><a>--</a></li>
+                <li><a href="/add">Добавить товар</a></li>
+            </ul>
+            <ul class="nav-buttons">
+                <li class="phone-wrapper"><a class="phone" href="tel: +7 (343) 289-57-00">+7 (343) 289-57-00</a></li>
+                <li class="gift-wrapper square-button"><a href="#"><img src="{% static 'img/featured_seasonal_and_gifts.svg' %}" alt=""></a></li>
+                <li class="cart-wrapper square-button"><a href="#"><img src="{% static 'img/shopping_cart.svg' %}" alt=""></a></li>
+                <li class="dropdown-menu square-button"><a href="#"><div></div></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="advertisement">
+            <img src="{% static 'img/section_1.png' %}" alt="">
+            <div class="section-text-column">
+                <h2 id="section-1-header">Станьте частью <br> виртуального мира</h2>
+                <div class="column-bottom-text">
+                    <p>Официальный интернет-магазин <br>
+                        / Быстрая доставка по РФ и СНГ</p>
+                    <h1>Warpoint</h1>
+                </div>
+            </div>
+        </section>
+        <section class="catalogue">
+            <h2 id="catalogue-header">Каталог товаров</h2>
+            <input type="search" name="catalogue-search" id="catalogue-search" placeholder="Поиск">
+            <div class="catalogue-wrapper">
+                <ul class="filters">
+                    <li class="filter price">
+                        <p>Цена</p>
+                        <input type="radio" name="price" id="price-1">
+                        <input type="radio" name="price" id="price-2">
+                        <input type="radio" name="price" id="price-3">
+                    </li>
+                    <li class="filter age">
+                        <p>Возраст</p>
+                        <input type="radio" name="age" id="age-1">
+                        <input type="radio" name="age" id="age-2">
+                        <input type="radio" name="age" id="age-3">
+                        <input type="radio" name="age" id="age-4">
+                    </li>
+                    <li>
+                        <p>Тип товара</p>
+                        <input type="radio" name="type" id="type-1">
+                        <input type="radio" name="type" id="type-2">
+                        <input type="radio" name="type" id="type-3">
+                        <input type="radio" name="type" id="type-4">
+                    </li>
+                </ul>
+                <ul class="items">
+                    <li class="items-element-card">
+                        <a href="#">
+                            <img class="item-img" src="{% static 'img/card-placeholder.jpg' %}" alt="">
+                            <p class="item-category">Техника</p>
+                            <h3 class="item-name">Очки виртуальной реальности VR PRO</h3>
+                            <p class="item-about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui error fugit harum ea dicta eveniet itaque, alias praesentium sequi sunt doloremque. Esse impedit culpa commodi, officiis delectus quia minima est!</p>
+                            <p class="item-price">Цена: 13 500 руб.</p>
+                        </a>
+                    </li>
+                    <li class="items-element-card">
+                        <a href="#">
+                            <img class="item-img" src="{% static 'img/card-placeholder.jpg' %}" alt="">
+                            <p class="item-category">Техника</p>
+                            <h3 class="item-name">Очки виртуальной реальности VR PRO</h3>
+                            <p class="item-about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui error fugit harum ea dicta eveniet itaque, alias praesentium sequi sunt doloremque. Esse impedit culpa commodi, officiis delectus quia minima est!</p>
+                            <p class="item-price">Цена: 13 500 руб.</p>
+                        </a>
+                    </li>
+                    <li class="items-element-card">
+                        <a href="#">
+                            <img class="item-img" src="{% static 'img/card-placeholder.jpg' %}" alt="">
+                            <p class="item-category">Техника</p>
+                            <h3 class="item-name">Очки виртуальной реальности VR PRO</h3>
+                            <p class="item-about">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui error fugit harum ea dicta eveniet itaque, alias praesentium sequi sunt doloremque. Esse impedit culpa commodi, officiis delectus quia minima est!</p>
+                            <p class="item-price">Цена: 13 500 руб.</p>
+                        </a>
+                    </li>
+                    {% for item in items %}
+                        <li class="items-element-card">
+                            <a href="/{{ item.id }}/">
+                                <img class="item-img" src="{{ item.photo.url }}" alt="">
+                                <p class="item-category">{{ item.category }}</p>
+                                <h3 class="item-name">{{ item.name }}</h3>
+                                <p class="item-about">{{ item.about }}</p>
+                                <p class="item-price">Цена: {{ item.price }} руб.</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- Пагинация -->
+            <div class="page-numeration">
+                <ul class="page-numbers">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">...</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-column-1">
+            <img class="logo" src="{% static 'img/warpoint_logo.svg' %}" alt="">
+            <p>ИП Скоробогатов Владимир Владимирович</p>
+            <p>ИНН: 720509659197</p>
+            <p>ОГРНИП: 321665800029893</p>
+            <div class="mobile-links">
+                <a href="#"><img src="{% static 'img/appstore.png' %}" alt=""></a>
+                <a href="#"><img src="{% static 'img/playmarket.png' %}" alt=""></a>
+            </div>
+            <p class="copyright">© 2020-2023. WARPOINT. Все права защищены.
+                Копирование материалов сайта запрещено</p>
+        </div>
+        <div class="footer-column-2">
+            <h4>Информация</h4>
+            <ul>
+                <li><a href="#">Наши акции</a></li>
+                <li><a href="#">Витрина</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Клубная карта</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Сертификаты</a></li>
+                <li><a href="#">Лидерборд</a></li>
+            </ul>
+        </div>
+        <div class="footer-column-3">
+            <h4>Соглашения</h4>
+            <ul>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Политика использования Cookie</a></li>
+                <li><a href="#">Пользовательское соглашение</a></li>
+                <li><a href="#">Использование сертификатов</a></li>
+                <li><a href="#">Наши реквизиты</a></li>
+                <li><a href="#">Популярные вопросы</a></li>
+            </ul>
+        </div>
+        <div class="footer-column-4">
+            <h4>Сотрудничество</h4>
+            <ul>
+                <li><a href="#">Франшиза</a></li>
+                <li><a href="#">Арендодателям</a></li>
+                <li><a href="#">Вакансии</a></li>
+                <li><a href="#">Инвестиции</a></li>
+                <li><a href="#">Аренда оборудования</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% block content %}
+    <div class="container mt-3">
+        <h2>Профиль пользователя {{ user_profile }}</h2>
+        <hr>
+        <div class="row">
+            <div class="col-xl-4 col-sm-12 border border-start border-0">
+            <h3 class="mb-3">Информация:</h3>
+                <p>
+                    <b>Имя пользователя:</b> {{ user_profile }}
+                    <b>Почта:</b> {{ email }}
+                <p style="display:none"></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

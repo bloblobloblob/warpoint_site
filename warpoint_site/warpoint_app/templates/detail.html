@@ -1,0 +1,19 @@
+{{ item.name }}
+{{ item.category }}
+{{ item.about }}
+{{ item.price }}
+<img style="width: 100px;" src="{{ item.photo.url }}">
+
+{% for r in rev %}
+    <div class="review">
+        <p id="author">{{ r.author }}</p>
+        <p id="review">{{ r.review }}</p>
+        <p id="date">{{ r.date }}</p>
+    </div>
+{% endfor %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ revForm.as_p }}
+    <button type="submit">Отправить отзыв</button>
+</form>
