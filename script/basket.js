@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsContainer.innerHTML = '';
         cartItems.forEach(itemHtml => {
             const itemElement = document.createElement('li');
+            itemElement.classList.add('items-element-card');
             itemElement.innerHTML = itemHtml;
             const addToCartButton = itemElement.querySelector('.add-to-cart');
             if (addToCartButton) {
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (addToCartButton) {
                 addToCartButton.remove();
             }
-            addItemToCart(itemElement.outerHTML);
+            addItemToCart(itemElement.innerHTML);
         });
     });
 
