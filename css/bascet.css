@@ -137,3 +137,86 @@ body, html {
     cursor: pointer;
     background-color: #311919;
 }
+
+.checkout {
+    padding: 20px;
+    border: 1px solid rgba(51, 51, 51, 1);
+    font-family: 'Gilroy Light', 'Arial', sans-serif;
+    width: 300px;
+    color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 450px;
+    margin-left: 20px;
+}
+
+.checkout-summary, .promo-code, .delivery-method {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout-summary p, .promo-code label, .delivery-method p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#total-price {
+    font-weight: bold;
+}
+
+.promo-code input {
+    width: calc(100% - 130px);
+    padding: 5px;
+    border: 1px solid rgba(51, 51, 51, 1);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.apply-promo {
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    text-decoration: underline;
+    background-color: rgba(27, 27, 27, 1);
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Gilroy;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    text-align: left;    
+}
+
+.delivery-method label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#pickup-point {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid rgba(51, 51, 51, 1);
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: rgba(51, 51, 51, 1);
+}
+
+.submit-order {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(224, 53, 63, 1);
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#promo {
+    background-color: rgba(51, 51, 51, 1);
+}

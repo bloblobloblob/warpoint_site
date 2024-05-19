@@ -44,6 +44,30 @@
             <div class="info" class="cart-items">
                 <ul id="cart-items"></ul>
             </div>
+            <div class="checkout">
+                <button type="submit" class="submit-order">Оформить заказ</button>
+                <form id="checkout-form">
+                    <div class="checkout-summary">
+                        <p>Корзина</p>
+                        <p>Общая сумма <span id="total-price"></span></p>
+                    </div>
+                    <div class="promo-code">
+                        <label for="promo">Промокод</label>
+                        <input type="text" id="promo" name="promo" placeholder="Введите промокод">
+                        <button type="button" class="apply-promo">Использовать купон</button>
+                    </div>
+                    <div class="delivery-method">
+                        <p>Способ доставки</p>
+                        <label>
+                            <input type="radio" name="delivery" value="courier"> Доставка курьером
+                        </label>
+                        <label>
+                            <input type="radio" name="delivery" value="mail" checked> Доставка почтой
+                        </label>
+                        <input type="text" id="pickup-point" name="pickup-point" placeholder="Адрес пункта выдачи">
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 </body>
