@@ -282,63 +282,6 @@ main {
     align-items: center;
 }
 
-.items {
-    max-width: 965px;
-    padding-left: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-}
-
-.items-element-card {
-    width: 300px;
-    height: 510px;
-    font-size: 14px;
-}
-
-.items-element-card a {
-    display: block;
-    height: inherit;
-}
-
-.items-element-card p {
-    line-height: 21.7px;
-}
-
-.item-img {
-    width: 300px;
-    height: 270px;
-}
-
-.item-name {
-    line-height: 31.2px;
-    font-size: 28px;
-    font-weight: 400;
-    font-family: "Bebas Neue";
-    text-transform: none;
-}
-
-.item-category {
-    color: #E0E0E099;
-    opacity: 60%;
-}
-
-.item-about {
-    display: -webkit-box;
-    color: #E0E0E0;
-    height: 60px;
-    width: 300px;
-    overflow: hidden;
-    white-space: wrap;
-    word-wrap: break-word;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.item-price {
-    margin-top: 30px;
-}
-
 .catalogue-wrapper {
     display: flex;
     justify-content: end;
