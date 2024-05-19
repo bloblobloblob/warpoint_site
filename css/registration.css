@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 644px;
+    max-height: 688px;
+    margin: auto;
+    padding: 0 92px;
+    box-sizing: border-box;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form h1 {
+    font-family: 'Gilroy Light';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 49px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 57px;
+    margin-bottom: 30px;
+}
+
+.registration-form form input[type="text"] {
+    max-width: 460px;
+    max-height: 65px;
+    padding: 23px;
+    font-family: 'Gilroy Light';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+}
+
+.registration-form button {
+    max-width: 460px;
+    max-height: 65px;
+    padding: 23px;
+    background-color: #E0353F;
+    font-family: 'Gilroy Light';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.registration-form p {
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center
+}
+
+.registration-form a{
+    color: #FFFFFF;
+    opacity: 60%;
+}
+
+#policy {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+}
+
+#form-name, #form-password, #form-password-confirmation {
+    margin-bottom: 20px;
+}
+
+#form-password, #form-password-confirmation {
+    -webkit-text-security: disc;
+}
+
+#form-email {
+    margin-bottom: 42px;
+}
