@@ -84,3 +84,8 @@
 #form-email {
     margin-bottom: 42px;
 }
+
+
+#form-email.login-email {
+    margin-bottom: 20px;
+}
