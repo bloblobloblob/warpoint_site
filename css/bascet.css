@@ -50,19 +50,8 @@ body, html {
     margin-left: 20px;
     padding: 20px;
     border: 1px solid rgba(51, 51, 51, 1);
-    width: 581px;
-    height: 399px;
-    font-family: 'Gilroy Light', 'Arial', sans-serif;
-}
-
-.info p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 20px 0;
-    background-color: rgba(51, 51, 51, 1);
-    padding: 10px;
-    color: rgba(252, 249, 249, 1);
+    width: 781px;
+    height: auto;
     font-family: 'Gilroy Light', 'Arial', sans-serif;
 }
 
@@ -70,3 +59,4 @@ body, html {
     background: rgba(51, 51, 51, 1);
     font-family: 'Gilroy Light', 'Arial', sans-serif;
 }
+
