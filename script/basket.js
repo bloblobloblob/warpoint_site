@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItems.forEach(itemHtml => {
             const itemElement = document.createElement('li');
             itemElement.classList.add('items-element-card');
-            itemElement.innerHTML = itemHtml;
+            itemElement.innerHTML = itemHtml + '<button class="delete-button"><img src="img/delete.svg"></button>';
             const addToCartButton = itemElement.querySelector('.add-to-cart');
             if (addToCartButton) {
                 addToCartButton.remove();
