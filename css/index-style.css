@@ -345,3 +345,13 @@ footer li a {
     display: block;
     line-height: 22.4px;
 }
+
+.item-price button {
+    background-color: #00000000;
+    cursor: pointer;
+    border: 0;
+}
+
+.item-price button img:hover {
+    background-color: #416ddd;
+}
